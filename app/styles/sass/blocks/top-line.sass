@@ -77,6 +77,7 @@
 	display: flex
 	justify-content: center
 	align-items: center
+	transform-style: preserve-3d
 	h1
 		font-size: 32px
 		line-height: 43px
@@ -117,6 +118,7 @@
 	width: 458px
 	height: 288px
 	display: inline-block
+	zoom: .98
 	> img
 		position: absolute
 	&-logo_w
@@ -156,3 +158,15 @@
 	top: 20px
 	left: -20px
 	z-index: 6
+
+.level--2
+	transform: translateZ(-70px)
+
+.level--1
+	transform: translateZ(-35px)
+
+.level-1
+	transform: translateZ(20px)
+
+.level-2
+	transform: translateZ(40px)
