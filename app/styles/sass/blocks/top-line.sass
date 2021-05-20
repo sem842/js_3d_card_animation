@@ -118,9 +118,11 @@
 	width: 458px
 	height: 288px
 	display: inline-block
-	zoom: .98
+	zoom: .9
 	> img
 		position: absolute
+		opacity: 0
+		transition: all 1s ease
 	&-logo_w
 		z-index: 12
 		top: 45px
@@ -134,10 +136,12 @@
 		z-index: 12
 		left: 45px
 		top: 158px
+		zoom: 3.5
 	&-valid
 		z-index: 12
 		top: 194px
 		right: 211px
+		zoom: 3
 	&-russia
 		z-index: 11
 		top: 20px
@@ -150,13 +154,13 @@
 	z-index: 10
 
 .l2_main
-	top: 10px
-	left: -10px
+	top: 30px
+	left: -50px
 	z-index: 8
 
 .l3_main
-	top: 20px
-	left: -20px
+	top: 60px
+	left: -100px
 	z-index: 6
 
 .level--2
