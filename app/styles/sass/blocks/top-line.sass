@@ -83,13 +83,10 @@
 	display: flex
 	justify-content: center
 	align-items: center
-<<<<<<< Updated upstream
-=======
 	transform-style: preserve-3d
 	+media-breakpoint-down(lg)
 		transform-style: flat
 		transform: rotate(0) !important
->>>>>>> Stashed changes
 	h1
 		font-size: 32px
 		line-height: 43px
@@ -133,6 +130,7 @@
 	width: 458px
 	height: 288px
 	display: inline-block
+	zoom: .9
 	> img
 		position: absolute
 		+media-breakpoint-down(md)
@@ -156,10 +154,12 @@
 		z-index: 12
 		left: 45px
 		top: 158px
+		zoom: 3.5
 	&-valid
 		z-index: 12
 		top: 194px
 		right: 211px
+		zoom: 3
 	&-russia
 		z-index: 11
 		top: 20px
@@ -172,11 +172,23 @@
 	z-index: 10
 
 .l2_main
-	top: 10px
-	left: -10px
+	top: 30px
+	left: -50px
 	z-index: 8
 
 .l3_main
-	top: 20px
-	left: -20px
+	top: 60px
+	left: -100px
 	z-index: 6
+
+.level--2
+	transform: translateZ(-70px)
+
+.level--1
+	transform: translateZ(-35px)
+
+.level-1
+	transform: translateZ(20px)
+
+.level-2
+	transform: translateZ(40px)
