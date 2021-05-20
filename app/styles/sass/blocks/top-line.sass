@@ -8,9 +8,13 @@
 	.button
 		+media-breakpoint-up(md)
 			margin-right: 50px
-	.button
 		+media-breakpoint-down(md)
 			margin-right: 10px
+			position: relative
+			right: 5px
+	+media-breakpoint-down(md)
+		position: relative
+		padding: 30px 0
 
 
 .text-right
@@ -54,6 +58,8 @@
 	min-height: 700px
 	overflow: hidden
 	position: relative
+	+media-breakpoint-down(sm)
+		overflow: visible
 	&::before
 		content: ''
 		position: absolute
@@ -77,6 +83,13 @@
 	display: flex
 	justify-content: center
 	align-items: center
+<<<<<<< Updated upstream
+=======
+	transform-style: preserve-3d
+	+media-breakpoint-down(lg)
+		transform-style: flat
+		transform: rotate(0) !important
+>>>>>>> Stashed changes
 	h1
 		font-size: 32px
 		line-height: 43px
@@ -96,6 +109,9 @@
 	margin-top: 20px
 	display: inline-block
 	font-size: 16px
+	+media-breakpoint-down(md)
+		margin-top: 10px
+		margin-bottom: 40px
 	i
 		display: inline-block
 		font-style: normal
@@ -119,6 +135,14 @@
 	display: inline-block
 	> img
 		position: absolute
+		+media-breakpoint-down(md)
+			display: none
+	+media-breakpoint-down(md)
+		background-image: url(../images/dist/card.png)
+		background-size: cover
+		width: 100%
+		padding-top: 64.30062630480167%
+		height: auto
 	&-logo_w
 		z-index: 12
 		top: 45px
