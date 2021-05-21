@@ -27,6 +27,11 @@ const body = document.querySelector('body')
 
 		request = requestAnimationFrame(updateMe)
 
+		mouseCords(e)
+
+		cursor.classList.remove('hidden')
+		follower.classList.remove('hidden')
+
 	})
 
 	function updateMe() {
@@ -48,5 +53,64 @@ const body = document.querySelector('body')
 	gsap.to('.card-chip', { opacity: 1, duration: .225 })
 	gsap.to('.card-valid', { opacity: 1, zoom: 1, duration: .1, delay: .25 })
 	gsap.to('.card-number-holder', { opacity: 1, zoom: 1, duration: .1, delay: .25 })
+
+	//CURSOR
+
+	const cursor		= document.getElementById('cursor'),
+			follower	= document.getElementById('aura'),
+			links			= document.getElementsByTagName('a')
+
+	mouseX = 0, mouseY = 0, posX = 0, posY = 0
+
+	function mouseCords(e) {
+		mouseX = e.pageX
+		mouseY = e.pageY
+	}
+
+	gsap.to({}, .01, {
+
+		repeat: -1,
+
+		onRepeat: () => {
+
+			posX += (mouseX - posX) / 5
+			posY += (mouseY - posY) / 5
+
+			gsap.set(cursor, {
+				css: {
+					left: mouseX,
+					top: mouseY
+				}
+			})
+
+			gsap.set(follower, {
+				css: {
+					left: posX -24,
+					top: posY -24
+				}
+			})
+
+		}
+
+	})
+
+	for(let i = 0; i < links.length; i++) {
+
+		links[i].addEventListener('mouseover', () => {
+			cursor.classList.add('active')
+			follower.classList.add('active')
+		})
+
+		links[i].addEventListener('mouseout', () => {
+			cursor.classList.remove('active')
+			follower.classList.remove('active')
+		})
+
+	}
+
+	body.addEventListener('mouseout', () => {
+		cursor.classList.add('hidden')
+		follower.classList.add('hidden')		
+	})
 
 })
